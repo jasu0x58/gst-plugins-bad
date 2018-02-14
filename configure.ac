@@ -1920,9 +1920,7 @@ AG_GST_CHECK_FEATURE(NVENC, [NVIDIA Encode API], nvenc, [
   AC_ARG_VAR(NVENCODE_LIBS, [linker flags for nvidia-encode])
   saved_LIBS="$LIBS"
   LIBS="$NVENCODE_LIBS $saved_LIBS"
-  AC_CHECK_LIB(nvidia-encode, NvEncodeAPICreateInstance, [HAVE_NVENCODE_LIB="yes"],
-      AC_MSG_WARN([Could not find library nvidia-encode]))
-  NVENCODE_LIBS="$NVENCODE_LIBS -lnvidia-encode"
+  HAVE_NVENCODE_LIB="yes"
   AC_SUBST(NVENCODE_LIBS)
   LIBS="$saved_LIBS"
 
